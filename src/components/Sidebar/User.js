@@ -14,7 +14,7 @@ const User = ({ username, fullName }) => {
           <img 
             className="rounded-full w-16 flex mr-3"
             src={`/images/avatars/${username}.jpg`}
-            alt=""
+            alt="User profile"
           />
         </div>
         <div className="col-span-3">
