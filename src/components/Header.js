@@ -4,11 +4,12 @@ import FirebaseContext from '../context/firebase';
 import UserContext from '../context/user';
 import * as ROUTES from '../constants/routes';
 import { DEFAULT_IMAGE_PATH } from '../constants/paths';
+import useUser from '../hooks/use-user';
 
 const Header = () => {
-
+  const {user : loggedInUser } = useContext(UserContext);
+  const { user } = useUser(loggedInUser?.uid);
   const { firebase } = useContext(FirebaseContext);
-  const { user } = useContext(UserContext);
   const history = useHistory();
   
   return (
