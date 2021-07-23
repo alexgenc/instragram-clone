@@ -23,7 +23,7 @@ const Profile = ({ user }) => {
       dispatch({ profile: user, photosCollection: photos, followerCount: user.followers.length });
     }
     getProfileInfoAndPhotos();
-  }, [user.username]);
+  }, [user.username, user]);
 
   return (
     <>
