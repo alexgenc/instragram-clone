@@ -39,6 +39,7 @@ const Signup = () => {
           fullName,
           emailAddress: emailAddress.toLowerCase(),
           following: [],
+          folowers: [],
           dateCreated: Date.now()
         });
 
@@ -52,6 +53,7 @@ const Signup = () => {
 
       }
     } else {
+      setUsername('');
       setError('That username is already taken, please try another username.')
     }
   }
@@ -92,7 +94,7 @@ const Signup = () => {
             <input
               aria-label="Enter your email address"
               type="text"
-              placeholder="Email address"
+              placeholder="Email Address"
               className="text-sm text-gray base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
               value={emailAddress}
               onChange={({ target }) => setEmailAddress(target.value)}
