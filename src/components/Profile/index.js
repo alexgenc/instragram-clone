@@ -20,7 +20,7 @@ const Profile = ({ user }) => {
   useEffect(() => {
     async function getProfileInfoAndPhotos() {
       const photos = await getUserPhotosByUserId(user.userId);
-      dispatch({ profile: user, photosCollection: photos, followerCount: user.followers.length });
+      dispatch({ profile: user, photosCollection: photos, followerCount: user.followers? user.followers.length : 0 });
     }
     getProfileInfoAndPhotos();
   }, [user.username, user]);
