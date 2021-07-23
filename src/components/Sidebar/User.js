@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+import { DEFAULT_IMAGE_PATH } from '../../constants/paths';
 
 const User = ({ username, fullName }) => {
 
@@ -13,8 +14,11 @@ const User = ({ username, fullName }) => {
         <div className="flex items-center justify-between col-span-1">
           <img 
             className="rounded-full w-16 flex mr-3"
-            src={`/images/avatars/${username}.jpg`}
+            src={`/images/avatars/${username}.jpg` ? `/images/avatars/${username}.jpg` : `/images/avatars/default.png`}
             alt="User profile"
+            onError={(e) => {
+              e.target.src = DEFAULT_IMAGE_PATH;
+            }}
           />
         </div>
         <div className="col-span-3">
